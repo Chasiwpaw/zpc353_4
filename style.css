@@ -1,0 +1,6 @@
+button { font-size: 13px;border:1px solid #666666; background-color:#CCFFCC;
+         border-color: #CCFF99 #999999 #999999 #CCFF99;
+         border-width: thin medium medium thin;}
+button.style1 { font-size: 13px; background:#CCFFCC;
+          border-width:thin thin thin thin; font-weight: bold; 
+          border-color:#CCCCFF #CCCCCC #CCCCCC #CCCCFF}

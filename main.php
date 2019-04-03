@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+
 <body>
 
 <p>
-<div> 
-        <button type="button" onclick="location.href='customer.php'"> Customer </button>
-        <button type="button" onclick="location.href='employee.php'"> Employee </button>
-</div>
+        <button class=button onmouseover="this.className='style1'" onmouseout="this.className='button'" onclick="location.href='customer.php'"> Customer </button>
+        <button class=button onmouseover="this.className='style1'" onmouseout="this.className='button'" onclick="location.href='employee.php'"> Employee </button>
 </p>
 
 </body>
