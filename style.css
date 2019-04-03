@@ -1,9 +1,18 @@
-button { font-size: 13px;border:1px solid #666666; background-color:#CCFFCC;
-         border-color: #CCFF99 #999999 #999999 #CCFF99;
+button { font-size: 13px;border:1px solid #464E51; background-color:#000000;
+         border-color: #464E51 #464E51 #464E51 #464E51;
          border-width: thin medium medium thin;
-         margin-left:4px; margin-right:4px; margin-top:5px; margin-bottom:3px;}
-button.style1 { font-size: 13px; background:#CCFFCC;
+         color:#32CD32;}
+button.style1 { font-size: 13px; background:#464E51;
           border-width:thin thin thin thin; font-weight: bold; 
-          border-color:#CCCCFF #CCCCCC #CCCCCC #CCCCFF}
-div {border: 1px solid #666666; display:inline-block; background-color:#CCFF99}
-p {display:inline;}
+          border-color:#464E51 #464E51 #464E51 #464E51}
+div {border: 1px solid #666666; width: 400px; height: 100px; 
+    display:inline-block; background-color:#000000;
+    position:absolute;top:50%;left:50%;
+    transform:translate(-50%,-50%);}
+p {display:inline; position:absolute;top:50%;left:50%;
+    transform:translate(-50%,-75%)}
+h1 {color:#32CD32;display:inline;}
+h1.main {display:inline;
+        position:absolute;top:50%;left:50%;
+        transform:translate(-50%,-100%)
+}
