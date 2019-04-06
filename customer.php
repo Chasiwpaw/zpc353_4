@@ -12,7 +12,7 @@
 </h1>
 <br>
 <p>
-<button class=button onmouseover="this.className='style1'" onmouseout="this.className='button'" onclick="alert('Customer Query 1 result')"> Query 1 </button>
+<button class=button onmouseover="this.className='style1'" onmouseout="this.className='button'" onclick="location.href='customer_query1.php'"> Query 1 </button>
 <button class=button onmouseover="this.className='style1'" onmouseout="this.className='button'" onclick="alert('Customer Query 2 result')"> Query 2 </button>
 <button class=button onmouseover="this.className='style1'" onmouseout="this.className='button'" onclick="alert('Customer Query 3 result')"> Query 3 </button>
 </p>
