@@ -6,14 +6,14 @@
 
 <body>
 
-<div>
-<h1>Old School Bookstore DB
-<h1 class="main">
-        <button class=button onmouseover="this.className='style1'" onmouseout="this.className='button'" onclick="location.href='customer.php'"> Customer </button>
-        <button class=button onmouseover="this.className='style1'" onmouseout="this.className='button'" onclick="location.href='employee.php'"> Employee </button>
-</h1>
-</h1>
+<div class="flex">
+<h1 class="main">Old School Bookstore DB</h1>
+<button class=button onmouseover="this.className='style1'" onmouseout="this.className='button'" onclick="location.href='customer.php'"> Customer </button>
+<button class=button onmouseover="this.className='style1'" onmouseout="this.className='button'" onclick="location.href='employee.php'"> Employee </button>
+<button class=button onmouseover="this.className='style1'" onmouseout="this.className='button'" onclick="location.href='book.php'"> Book </button>
+</div>
 </div>
 
 </body>
-</html>
+
+

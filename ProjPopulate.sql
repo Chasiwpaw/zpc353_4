@@ -50,19 +50,19 @@ insert into Address values("cust3@gmail.com","qc","12171","montreal","h2b1h5");
 insert into Address values("cust4@gmail.com","qc","12170","montreal","h2b1h3");
 insert into Address values("cust5@gmail.com","qc","12179","montreal","h2b1h9");
 
-insert into Orders values("order1","track1","confirm1", '2018-01-01', 1, "Branch11", "cust1@gmail.com", "00001");
+insert into Orders values("order1","track1","confirm1", '2018-01-01','2018-01-16', 1, "Branch11", "cust1@gmail.com", "00001");
 insert into Orderitem values("order1","12345",1);
 insert into Orderitem values("order1","12347",2);
-insert into Orders values("order2","track2","confirm2", '2018-01-15', 2, "Branch22", "cust1@gmail.com", "00002");
+insert into Orders values("order2","track2","confirm2", '2018-01-15','2018-01-25', 2, "Branch22", "cust1@gmail.com", "00002");
 insert into Orderitem values("order2","12346",1);
 insert into Orderitem values("order2","12349",1);
-insert into Orders values("order3", "track3","confirm3",'2018-03-05',3,"Branch31","cust2@gmail.com","00001");
+insert into Orders values("order3", "track3","confirm3",'2018-03-05','2018-03-20',3,"Branch31","cust2@gmail.com","00001");
 insert into Orderitem values("order3","12348",1);
-insert into Orders values("order4","track4","confirm4",'2018-04-20',1,"Branch12", "cust3@gmail.com","00003");
+insert into Orders values("order4","track4","confirm4",'2018-04-20',"NULL",1,"Branch12", "cust3@gmail.com","00003");
 insert into Orderitem values("order4","12345",1);
-insert into Orders values("order5","track5","confirm5",'2018-05-12',2,"Branch21","cust4@gmail.com","00004");
+insert into Orders values("order5","track5","confirm5",'2018-05-12',"NULL",2,"Branch21","cust4@gmail.com","00004");
 insert into Orderitem values("order5","12346",1);
-insert into Orders values("order6","track6","confirm6",'2018-06-17',3,"Branch32","cust5@gmail.com","00005");
+insert into Orders values("order6","track6","confirm6",'2018-06-17',"NULL",3,"Branch32","cust5@gmail.com","00005");
 insert into Orderitem values("order6","12348",1);
 
 insert into Shipment values ("shipment1",'2018-01-10', 1, "00001"); /*received within time*/
