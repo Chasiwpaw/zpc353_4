@@ -26,7 +26,7 @@
 </form>
 </h3>
 <h3>
-<button class=button onmouseover="this.className='style1'" onmouseout="this.className='button'" onclick="location.href='query_f.php'"> F. Get All Purchar Made Grouped by Year </button>
+<button class=button onmouseover="this.className='style1'" onmouseout="this.className='button'" onclick="location.href='query_f.php'"> F. Get All Purchases Made(Grouped by Year) </button>
 </h3>
 </div>
 </body>
