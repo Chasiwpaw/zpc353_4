@@ -22,7 +22,7 @@ $result3 = $conn->query($sql3);
 if ($result3->num_rows > 0) {
     echo "<table><tr><th>Order Number</th></tr><tr><th>Date</th></tr><tr><th>Book title</th></tr><tr><th>Book price</th></tr><tr><th>Quantity</th></tr><tr><th>Employee</th></tr></table>";
     // output data of each row
-    while($row = $result->fetch_assoc()) {
+    while($row = $result3->fetch_assoc()) {
         echo "<tr><td>".$row["order_number"]."</td><td>".$row["date_placed"]."</td></tr>".$row["title"]."</td></tr>".$row["price"]."</td></tr>".$row["quantity"]."</td></tr>".$row["emp_id"]."</td></tr>";
     }
     echo "</table>";
