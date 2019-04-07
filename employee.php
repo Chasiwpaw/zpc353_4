@@ -4,17 +4,22 @@
     <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body>
-<div class="wrapper">
-<h1>Employee page
+<div class="flex">
+<h1>Employee Page
     <button class=button onmouseover="this.className='style1'" onmouseout="this.className='button'" onclick="location.href='main.php'">Main page</button>
-    <button class=button onmouseover="this.className='style1'" onmouseout="this.className='button'" onclick="location.href='customer.php'">Customer</button>
 </h1>
-<br>
-<p>
-<button class=button onmouseover="this.className='style1'" onmouseout="this.className='button'" onclick="alert('Employee Query 1 result')"> Query 1 </button>
-<button class=button onmouseover="this.className='style1'" onmouseout="this.className='button'" onclick="alert('Employee Query 2 result')"> Query 2 </button>
-<button class=button onmouseover="this.className='style1'" onmouseout="this.className='button'" onclick="alert('Employee Query 3 result')"> Query 3 </button>
-</p>
+<form action="query_e.php" method="post">
+<h3>
+	Employee ID:
+	<input type="text" id="eid"></input>
+</h3>
+<h3>
+	Date:
+	<input type="date" id="current_date"></input>
+</h3>
+<h3>
+<button style="width: 60%;" type="submit" class=button onmouseover="this.className='style1'" onmouseout="this.className='button'"> E. Get All Sales of Employee X on Y Date </button>
+</h3>
+</form>
 </div>
 </body>
-</html>
