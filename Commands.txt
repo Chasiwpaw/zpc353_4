@@ -1,19 +1,32 @@
-Create table Bookstore (name varchar(20) NOT NULL, email varchar(20), Primary key (name));
+Create table Bookstore (name varchar(20) NOT NULL, email varchar(20) references Address(email), Primary key (name));
 
-Create table Address (email varchar(20) NOT NULL, province varchar(10), city varchar(10), postalcode varchar(6), Primary key (email));
 
-Create table Book (isbn varchar(10) NOT NULL, title varchar(20), edition int, author varchar(20), publisher varchar(20), price double, quantity_on_hand int, quantity_sold int, Primary key (isbn));
+Create table Book (isbn varchar(10) NOT NULL, title varchar(20), author varchar(20), edition int(11), price double, quantity_on_hand int, quantity_sold int, primary key (isbn));
+Alter table Book add publisher int references Publisher(publisher_num);
 
-Create table Branch (branch_name varchar(20) NOT NULL, publisher varchar(20), Primary key (branch_name));
+Create table Bookstore_employee (id varchar(10) NOT NULL, name varchar(20), SSN varchar(9), phone varchar(10),  primary key (id));
+Alter table Bookstore_employee add email varchar(25) references Address(email);
 
-Create table Publisher (publisher_number int NOT NULL, company_name varchar(20), Primary key (publisher_number));
+Create table Publisher (publisher_num int NOT NULL, company_name varchar(20), phone varchar(10), primary key (publisher_num));
+Alter table Publisher add email varchar(25) references Address(email);
 
-Create table `Order` (order_number varchar(10) NOT NULL, tracking_number varchar(10), confirmation_number varchar(10), date_placed datetime, Primary key (order_number));
+Create table Branch (branch_name varchar(20) NOT NULL, phone varchar(10), publisher_num int references Publisher(publisher_num), branch_rep varchar(20), branch_manager varchar(20), primary key (branch_name));
+Alter table Branch add email varchar(25) references Address(email);
 
-Create table Sale (sale_number varchar(10) NOT NULL, date_sold datetime, Primary key (sale_number));
+Create table Address (email varchar(20) NOT NULL, province varchar(10),civic varchar(10), city varchar(10), postalcode varchar(6), primary key (email));
 
-Create table Shipment (shipment_number varchar(10) NOT NULL, date_ship datetime, Primary key (shipment_number));
+Create table Customer (email varchar(25) references Address(email), name varchar(20), phone varchar(10) NOT NULL, primary key (email)); 
 
-Create table Customer (name varchar(20), phone_number varchar(10) NOT NULL, Primary key (phone_number)); 
+Create table Orders (order_number varchar(10) NOT NULL, tracking_number varchar(10), confirmation_number varchar(10), date_placed datetime,  publisher_num int references Publisher(publisher_num), branch varchar(20) references Branch(branch_name), cust_email varchar(25) references Customer(email), emp_id varchar(10) references Bookstore_employee(id), primary key (order_number));
+Create table Orderitem (order_number varchar(10) references Orders(order_number), isbn varchar(10) references Book(isbn), quantity int, primary key(order_number, isbn));
 
-Create table Bookstore_employee (id varchar(10) NOT NULL, SSN varchar(9), name varchar(20), phone_number varchar(10), branch_representative varchar(20), branch_manager varchar(20));
+
+Create table Sale (sale_number varchar(10) NOT NULL, date_sold datetime,  cust_email varchar(25) references Customer(email), emp_id varchar(10) references Bookstore_employee(id),primary key (sale_number));
+Create table Saleitem (sale_number varchar(10) references Sale(sale_number), isbn varchar(10) references Book(isbn), quantity int, price double, primary key(sale_number, isbn));
+
+
+Create table Shipment (shipment_number varchar(10) NOT NULL, date_ship datetime, publisher_num int references Publisher(publisher_num), emp_id varchar(10) references Bookstore_employee(id),  Primary key (shipment_number));
+Create table Shipmentitem (shipment_number varchar(10) references Shipment(shipment_number), isbn varchar(10) references Book(isbn), quantity int, primary key(shipment_number, isbn));
+
+
+Create table satisfied_by(order_number varchar(10) references Orders(order_number), shipment_number varchar(10) references Shipment(shipment_number));
