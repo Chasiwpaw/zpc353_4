@@ -12,7 +12,7 @@ if ($conn->connect_error) {
 $sql1 = "create table order_table (order_number varchar(10), date_placed datetime, emp_id varchar(10), isbn varchar(10), quantity int, title varchar(20), price double)";
 $result1 = $conn->query($sql1);
 $sql2 = "insert into order_table 
-select Orders.order_number, date_placed, emp_id, Book.isbn, quantity, title, price from Orders, Orderitem,Book where cust_email = '".$_POST['cid']."' and Orders.order_number = Orderitem.order_number and Orderitem.isbn=Book.isbn";
+select Orders.order_number, date_placed, emp_id, Book.isbn, quantity, title, price from Orders, Orderitem,Book where cust_email = '".$_POST['cid']."' and Orders.order_number = Orderitem.order_number and Orderitem.isbn=Book.isbn order by Orders.order_number";
 $result2 = $conn->query($sql2);
 $sql3 = "select * from order_table";
 $result3 = $conn->query($sql3);
