@@ -9,11 +9,11 @@ $conn=new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
 }
-$sql1 = "create table purchase_table(order_number varchar(10), date_placed datetime, emp_id varchar(10), isbn varchar(10),  title varchar(20), quantity int, price double, cust_email varchar(25), emp_id varchar(10))";
+$sql1 = "create table purchase_table(order_number varchar(10), date_placed datetime, emp_id varchar(10), isbn varchar(10),  title varchar(20), quantity int, price double, cust_email varchar(25))";
 $result1 = $conn->query($sql1);
 
 $sql2 = "insert into purchase_table
-select Orders.order_number, date_placed, emp_id, Book.isbn,  title, quantity, price, cust_email, Orders.emp_id from Orders, Orderitem, Book where Orders.order_number = Orderitem.order_number and Orderitem.isbn = Book.isbn order by Orders.cust_email";
+select Orders.order_number, date_placed, Orders.emp_id, Book.isbn,  title, quantity, price, cust_email from Orders, Orderitem, Book where Orders.order_number = Orderitem.order_number and Orderitem.isbn = Book.isbn order by Orders.cust_email";
 $result2 = $conn->query($sql2);
 
 $sql3 = "select * from purchase_table";
